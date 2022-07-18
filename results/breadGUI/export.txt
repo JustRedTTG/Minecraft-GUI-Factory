@@ -1,0 +1,85 @@
+GUIobject export ~ By Red
+Please use these values when making your screen. It will insure the alignment of the slots.
+Project name: "breadGUI"
+SlotSize: (18, 18)
+Size of screen: 176, 222
+!!! Please keep a record of your current slots ID and X and Y!!!
+```
+int currentID = 0;
+int x;
+int y;
+```
+slot count: 36
+
+SlotArray ```
+for (int row=0; row < 5; row++)
+{
+    y = 8 + 18 * row;
+    for (int column=0; column < 3; column++)
+    {
+        x = 8 + 18 * column;
+        this.addSlot(new Slot((IInventory) tile, currentID, x, y));
+        currentID++;
+    }
+}
+```
+
+SlotArray ```
+for (int row=0; row < 5; row++)
+{
+    y = 8 + 18 * row;
+    for (int column=0; column < 3; column++)
+    {
+        x = 74 + 18 * column;
+        this.addSlot(new Slot((IInventory) tile, currentID, x, y));
+        currentID++;
+    }
+}
+```
+
+SlotArray ```
+for (int row=0; row < 1; row++)
+{
+    y = 108 + 18 * row;
+    for (int column=0; column < 3; column++)
+    {
+        x = 8 + 18 * column;
+        this.addSlot(new Slot((IInventory) tile, currentID, x, y));
+        currentID++;
+    }
+}
+```
+
+SlotArray ```
+for (int row=0; row < 1; row++)
+{
+    y = 108 + 18 * row;
+    for (int column=0; column < 3; column++)
+    {
+        x = 74 + 18 * column;
+        this.addSlot(new Slot((IInventory) tile, currentID, x, y));
+        currentID++;
+    }
+}
+```
+
+PlayerInventory [
+   hotbar = ```
+for (int col = 0; col < 9; col++) {
+	this.addSlot(new Slot(playerInventory, col, 8 + col * 18, 198));
+}
+```
+
+    main = ```
+for (int row=0; row < 3; row++)
+{
+    y = 137 + 18 * row;
+    for (int column=0; column < 9; column++)
+    {
+        x = 8 + 18 * column;
+        int index = row * 9 + column + 9;
+        this.addSlot(new Slot(playerInventory, index, x, y));
+    }
+}
+```
+]
